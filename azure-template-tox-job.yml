@@ -137,7 +137,7 @@ jobs:
       displayName: 'Install dependencies'
     #
     - script: |
-        ls -lR wwpdb/utils/align
+        ls -lR 
       displayName: "Look at dir"
     - ${{ if startsWith(parameters.tox, 'py') }}:
       - script: |
