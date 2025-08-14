@@ -173,7 +173,7 @@ jobs:
         displayName: 'Runing tox task'
     - script: |
         ls -lR wwpdb/utils/align
-      displayname: "Look at dir"
+      displayName: "Look at dir"
     #
     #  Build artifacts if this is a test target (i.e. labeled as py##)
     #
