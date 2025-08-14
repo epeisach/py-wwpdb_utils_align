@@ -136,6 +136,9 @@ jobs:
     - script: pip install -r requirements.txt
       displayName: 'Install dependencies'
     #
+    - script: |
+        ls -lR wwpdb/utils/align
+      displayName: "Look at dir"
     - ${{ if startsWith(parameters.tox, 'py') }}:
       - script: |
           export CONFIG_SUPPORT_TOKEN_ENV=$(VAR_CONFIG_SUPPORT_TOKEN_ENV)
@@ -171,9 +174,6 @@ jobs:
           export CONFIG_SUPPORT_TOKEN_ENV=$(VAR_CONFIG_SUPPORT_TOKEN_ENV)
           ${{ format('python -m tox -e {0}-py27', parameters.tox) }}
         displayName: 'Runing tox task'
-    - script: |
-        ls -lR wwpdb/utils/align
-      displayName: "Look at dir"
     #
     #  Build artifacts if this is a test target (i.e. labeled as py##)
     #
